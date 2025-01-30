@@ -1,0 +1,101 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+body {
+  margin: 0;
+  color: #333030;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  background-color: blue;
+  color: white;
+  font-size: 25px;
+}
+
+#chatWindow {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  overflow-y: auto;
+  height: calc(100vh - 130px);
+
+  .message-user {
+    display: flex;
+    justify-content: flex-end;
+    //margin: 25px;
+    p {
+      border-radius: 5px;
+      background-color: #F0F0F0;
+      padding: 15px;
+      max-width: 60%;
+      word-wrap: break-word;
+    }
+  }
+
+  .message-server {
+    display: flex;
+    justify-content: flex-start;
+    ul {
+      margin: 20px;
+      min-width: 25%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+    }
+
+    li {
+      display: contents;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      text-align: left;
+    }
+    li > div {
+      padding: 10px;
+      background-color: #fff;
+      border-bottom: 1px solid #EAF6FF;
+      border-right: 1px solid #EAF6FF;
+      border-left: 1px solid #EAF6FF;
+      &.radius {
+        background-color: #EAF6FF;
+        border-radius: 5px;
+      }
+    }
+
+    li.item > div:hover {
+      background-color: #d0e9ff;
+      cursor: pointer;
+    }
+    li.error > div {
+      color: red;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  }
+}
+
+#chatMessage {
+  font-family: Arial, sans-serif;
+  color: #333030;
+  background-color: #eaeaea;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+  padding: 5px;
+  input {
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
