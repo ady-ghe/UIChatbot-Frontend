@@ -1,5 +1,5 @@
 # UI Chatbot
-to install all the dependencies type 'npm inbstall'
-to use type 'ng serve'
+- to install all the dependencies type 'npm install'
+- to use type 'ng serve'
 
 
