@@ -1,0 +1,30 @@
+{
+	"name": "stock-chatbot",
+	"version": "0.0.0",
+	"scripts": {
+		"start": "ng serve --port 4200",
+		"build": "ng build"
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "^16.0.0",
+		"@angular/common": "^16.0.0",
+		"@angular/core": "^16.0.0",
+		"@angular/forms": "^16.0.0",
+		"@angular/platform-browser": "^16.0.0",
+		"@angular/platform-browser-dynamic": "^16.0.0",
+		"@angular/router": "^16.0.0",
+		"@fortawesome/angular-fontawesome": "^0.13.0",
+		"@fortawesome/fontawesome-svg-core": "^6.7.2",
+		"@fortawesome/free-solid-svg-icons": "^6.7.2",
+		"bootstrap": "^5.3.3",
+		"rxjs": "~7.8.0",
+		"zone.js": "~0.13.0"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "^16.0.0",
+		"@angular/cli": "^16.0.0",
+		"@angular/compiler-cli": "^16.0.0",
+		"typescript": "~5.0.0"
+	}
+}
