@@ -78,7 +78,7 @@
 
 <ng-template #tplError let-error="error">
 	<ul>
-		<li class="error">
+		<li *ngIf="error !== '404'" class="error">
 			<span>{{ error }}</span>
 		</li>
 		<li *ngIf="error === '404'">
