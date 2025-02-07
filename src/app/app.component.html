@@ -12,8 +12,8 @@
         </div>
 
         <div *ngFor="let msg of webSocketService.messages$ | async"
-             [ngClass]="msg.fromUser ? 'message-user' : 'message-server'">
-
+             [ngClass]="getChatClassName(msg)">
+			 
             <!-- Display User Message-->
             <p *ngIf="msg.fromUser && msg.text!='MainMenu'">{{ msg.text }}</p>
 
@@ -53,12 +53,13 @@
                     <div (click)="goBack()">&laquo; Go back</div>
                 </li>
             </ul>
+			
             <!-- Errors -->
-            <ul *ngIf="!msg.fromUser && msg.error">
-                <li class="error">
-                    <div>{{ msg.text }}</div>
-                </li>
-            </ul>
+			<ng-container 
+				*ngIf="!msg.fromUser && msg.error" 
+				[ngTemplateOutlet]="tplError" 
+				[ngTemplateOutletContext]="{ error: msg.text }">
+			</ng-container>
         </div>
     </div>
     <div id="chatMessage">
@@ -74,3 +75,14 @@
     </div>
 
 </div>
+
+<ng-template #tplError let-error="error">
+	<ul>
+		<li class="error">
+			<span>{{ error }}</span>
+		</li>
+		<li *ngIf="error === '404'">
+			<img src="../assets/images/404-message.png" vspace="50">
+		</li>
+	</ul>
+</ng-template>

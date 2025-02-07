@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { WebSocketService } from '@app/shared/services/websocket.service';
 import { Message } from "@app/shared/interfaces/message.interface";
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.webSocketService.connect();
     this.webSocketService.messages$.subscribe((messages) => {
-
       const lastServerMessage = [...messages]
           .reverse()
           .find(msg => !msg.fromUser);
@@ -36,6 +37,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.webSocketService.disconnect();
+  }
+  
+  getChatClassName(msg: Message): string {
+	return msg.fromUser ? 'message-user' : 'message-server' + (msg.error ? ' error' : '');
   }
 
    selectExchange(code: string): void {
