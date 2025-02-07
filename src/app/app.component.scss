@@ -1,11 +1,4 @@
 @import 'bootstrap/dist/css/bootstrap.css';
-body {
-  margin: 0;
-  color: #333030;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 .container {
   width: 80%;
   align-items: center;
@@ -17,23 +10,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 60px;
+  height: 160px;
   background-color: blue;
   color: white;
-  font-size: 25px;
-  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Gill Sans Extrabold", sans-serif;
+  background-image: url("../assets/images/header3.png");
+  background-repeat: no-repeat;
+  background-color: #2894d6;
 }
 
 #chatWindow {
   font-family: Arial, sans-serif;
   font-size: 13px;
   overflow-y: auto;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 230px);
 
   .message-user {
     display: flex;
     justify-content: flex-end;
-    margin-right: 40px;
+    margin: 25px;
     p {
       border-radius: 5px;
       background-color: #F0F0F0;
