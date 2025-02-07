@@ -27,8 +27,7 @@ export class WebSocketService {
     this.socket.onerror = (event) => {
       this.messagesSubject.next([
         ...this.messagesSubject.getValue(),
-        { text: '️ Sorry, but I can\'t help you today, I have a connection error :( ' +
-              ' Please try again later.', fromUser: false, error: true, step:'' }
+        { text: '404', fromUser: false, error: true, step:'' }
       ]);
     };
     this.socket.onclose = () => {
