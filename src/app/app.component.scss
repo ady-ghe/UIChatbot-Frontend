@@ -31,12 +31,16 @@
     display: flex;
     justify-content: flex-end;
     margin: 25px;
+	color: white;
     p {
-      border-radius: 5px;
-      background-color: #F0F0F0;
-      padding: 15px;
-      max-width: 60%;
-      word-wrap: break-word;
+		border-radius: 5px;
+		background-color: #F0F0F0;
+		background-repeat: no-repeat;
+		background-image: url("../assets/images/_message_user.png");
+		width: 192px;
+		height: 66px;
+		padding: 20px;
+	  
     }
   }
 
